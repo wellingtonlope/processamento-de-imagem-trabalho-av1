@@ -1,5 +1,41 @@
-# Faça as mesmas coisas solicitadas no exercício 1, mas, tome com entrada a imagem
-# “lena_color_512.tif” que uma imagem colorida.
+# Usando a imagem da “lena_color_512.tif” como entrada, faça o seu processamento com
+# objetivo de gerar uma imagem com o efeito de tabuleiro na qual cada quadrado representa
+# um canal da imagem de entrada, ou seja, um quadrado que demonstra o canal vermelho
+# (red), o canal verde (green) e o canal azul (blue) como exemplificado na imagem abaixo. Os
+# quadrados devem ter seus canais de cores alternados, seus vizinhos não podem ter os
+# mesmos canais de cores, e o tamanho do quadrado deve ser 4 × 4 (16 pixels).
+
+def next_color(img, i, j, aux):
+	if aux == 0:
+		if img[i - 1, j, 0] != 0:
+			return 1
+		if img[i - 1, j, 1] != 0:
+			return 2
+		if img[i - 1, j, 2] != 0:
+			return 0
+	if aux == 1:
+		if img[i, j - 1, 0] != 0:
+			return 1
+		if img[i, j - 1, 1] != 0:
+			return 2
+		if img[i, j - 1, 2] != 0:
+			return 0
+
+def same_color(img, i, j, aux):
+	if aux == 0:
+		if img[i - 1, j, 0] != 0:
+			return 0
+		if img[i - 1, j, 1] != 0:
+			return 1
+		if img[i - 1, j, 2] != 0:
+			return 2
+	if aux == 1:
+		if img[i, j - 1, 0] != 0:
+			return 0
+		if img[i, j - 1, 1] != 0:
+			return 1
+		if img[i, j - 1, 2] != 0:
+			return 2
 
 import matplotlib.pyplot as plt
 from skimage import io
@@ -12,47 +48,6 @@ img = io.imread(path + filename)
 rows, cols, dim = img.shape
 
 img_out = img.copy()
-
-colors = [[1, 2], [0, 2], [0, 1]]
-
-
-def next_color(img, i, j, aux):
-	if aux == 0:
-		# print(img[i - 1, j])
-		if img[i - 1, j, 1] == 0 and img[i - 1, j, 2] == 0:
-			return 1
-		if img[i - 1, j, 0] == 0 and img[i - 1, j, 2] == 0:
-			return 2
-		if img[i - 1, j, 0] == 0 and img[i - 1, j, 1] == 0:
-			return 0
-	if aux == 1:
-		# print(img[i, j - 1])
-		if img[i, j - 1, 1] == 0 and img[i, j - 1, 2] == 0:
-			return 1
-		if img[i, j - 1, 0] == 0 and img[i, j - 1, 2] == 0:
-			return 2
-		if img[i, j - 1, 0] == 0 and img[i, j - 1, 1] == 0:
-			return 0
-
-
-def same_color(img, i, j, aux):
-	if aux == 0:
-		# print(img[i - 1, j])
-		if img[i - 1, j, 1] == 0 and img[i - 1, j, 2] == 0:
-			return 0
-		if img[i - 1, j, 0] == 0 and img[i - 1, j, 2] == 0:
-			return 1
-		if img[i - 1, j, 0] == 0 and img[i - 1, j, 1] == 0:
-			return 2
-	if aux == 1:
-		# print(img[i, j - 1])
-		if img[i, j - 1, 1] == 0 and img[i, j - 1, 2] == 0:
-			return 0
-		if img[i, j - 1, 0] == 0 and img[i, j - 1, 2] == 0:
-			return 1
-		if img[i, j - 1, 0] == 0 and img[i, j - 1, 1] == 0:
-			return 2
-
 
 h = 4
 color = 0
