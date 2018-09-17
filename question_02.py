@@ -13,7 +13,7 @@ rows, cols, dim = img.shape
 
 img_out = img.copy()
 
-h = 64
+h = 8
 r = 0
 c = 0
 for i in range(rows):
@@ -37,4 +37,4 @@ io.imshow(img_out)
 
 io.show()
 
-io.imsave('colorida.png', img_out)
+io.imsave('out/chess_lena_color.png', img_out)

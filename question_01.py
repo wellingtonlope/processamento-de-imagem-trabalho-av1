@@ -15,7 +15,7 @@ rows, cols = img.shape
 
 img_out = img.copy()
 
-h = 64
+h = 8
 r = 0
 c = 0
 for i in range(rows):
@@ -36,3 +36,5 @@ plt.figure('Out')
 io.imshow(img_out)
 
 io.show()
+
+io.imsave('out/chess_lena_gray.png', img_out)
