@@ -18,7 +18,7 @@ def imEqHist(img, rows_i, rows_f, cols_i, cols_f):
 	im_hn = im_h.copy()
 	s_k = im_h.copy()
 
-	MN = rows * cols
+	MN = (rows_f - rows_i) * (cols_f - cols_i)
 
 	for i in range(rows_i, rows_f):
 		for j in range(cols_i, cols_f):
@@ -55,8 +55,7 @@ img = io.imread(path + filename)
 
 rows, cols = img.shape
 
-print(rows, cols)
-img_out = imEqHist(img.copy(), 0, rows, cols//2, cols)
+img_out = imEqHist(img.copy(), 0, rows, cols // 2, cols)
 
 plt.figure('In')
 io.imshow(img)
