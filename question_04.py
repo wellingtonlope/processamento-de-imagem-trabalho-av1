@@ -1,9 +1,4 @@
-# Usando a imagem da “lena_color_512.tif” como entrada, faça o seu processamento com
-# objetivo de gerar uma imagem com o efeito de tabuleiro na qual cada quadrado representa
-# um canal da imagem de entrada, ou seja, um quadrado que demonstra o canal vermelho
-# (red), o canal verde (green) e o canal azul (blue) como exemplificado na imagem abaixo. Os
-# quadrados devem ter seus canais de cores alternados, seus vizinhos não podem ter os
-# mesmos canais de cores, e o tamanho do quadrado deve ser 4 × 4 (16 pixels).
+# Faça o mesmo que no exercício anterior, mas, pixel a pixel.
 
 def next_color(img, i, j, aux):
 	if aux == 0:
@@ -49,7 +44,7 @@ rows, cols, dim = img.shape
 
 img_out = img.copy()
 
-h = 4
+h = 1
 color = 0
 r = 0
 c = 0
@@ -83,4 +78,4 @@ io.imshow(img_out)
 
 io.show()
 
-io.imsave('out/chess_rgb_4x4_lena_color.png', img_out)
+io.imsave('out/chess_rgb_1x1_lena_color.png', img_out)
