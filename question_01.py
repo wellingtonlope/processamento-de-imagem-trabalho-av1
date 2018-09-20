@@ -37,4 +37,4 @@ io.imshow(img_out)
 
 io.show()
 
-io.imsave('out/chess_lena_gray.png', img_out)
+io.imsave('out/question_01.png', img_out)

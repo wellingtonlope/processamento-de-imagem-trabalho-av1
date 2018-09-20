@@ -83,4 +83,4 @@ io.imshow(img_out)
 
 io.show()
 
-io.imsave('out/chess_rgb_4x4_lena_color.png', img_out)
+io.imsave('out/question_03.png', img_out)
