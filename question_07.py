@@ -1,6 +1,4 @@
-# Equalização por setores. Carregue a imagem da “lena_gray_512.tif” e dívida em quatro
-# setores e equalize os setores do canto superior direito e inferior esquerdo como
-# exemplificado na figura abaixo.
+# Divida a imagem da “lena_gray_512.tif” em dois setores e equalize um dos setores como exemplificado na figura abaixo.
 
 import matplotlib.pyplot as plt
 from skimage import io

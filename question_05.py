@@ -1,7 +1,5 @@
-# Usando a imagem da “lena_gray_512.tif” como entrada, gere como saída uma imagem
-# em formato de tabuleiro de xadrez (como exemplificado na imagem abaixo) processando
-# a imagem de entrada, sendo, um quadrado parte da imagem de entrada e o outro é um
-# quadrado preto. A área do quadrado do tabuleiro é de (ou seja, 64 pixels).
+# Fusão de imagens. Insira a imagem da “lena_gray_512.tif” no canto inferior da imagem dos
+# “vingadores.jpg”.
 
 import matplotlib.pyplot as plt
 from skimage import io
