@@ -14,8 +14,8 @@ def imEqHist(img, img_out, rows_i, rows_f, cols_i, cols_f):
 	# rows, cols = img.shape
 
 	im_h = [0] * 256
-	im_hn = im_h.copy()
-	s_k = im_h.copy()
+	im_hn = [0] * 256
+	s_k = [0] * 256
 
 	MN = 3 * 3
 
