@@ -47,7 +47,7 @@ img_out = img.copy()
 
 for i in range(1, rows - 1):
 	for j in range(1, cols - 1):
-		imEqHist(img, img_out, i - 1, i + 1, j - 1, j + 1)
+		imEqHist(img, img_out, i - 1, i + 2, j - 1, j + 2)
 
 plt.figure('In')
 io.imshow(img)
